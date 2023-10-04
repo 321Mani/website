@@ -1,0 +1,141 @@
+<html>
+<head>
+<script language="javascript" >
+function onsubmit_validation()
+{
+if(document.f1.i1.value=="")
+{
+alert("please enter your name");
+document.f1.i1.focus();
+return false;
+}
+if(document.f1.pass1.value=="")
+{
+alert("enter your password");
+document.f1.pass1.focus();
+return false;
+}
+if(document.f1.pass2.value=="")
+{
+alert("re-enter your password");
+document.f1.pass2.focus();
+return false;
+}
+if((document.f1.pass1.value)!=(document.f1.pass2.value))
+{
+alert("password are not same");
+return false;
+}
+if(document.f1.age.selectedIndex==0)
+{
+
+
+alert("select your age");
+return false;
+}
+if(document.f1.gender[0].checked==false && document.f1.gender[1].checked==false)
+{
+alert("select your gender");
+return false;
+}
+if(document.f1.c1.checked==false && document.f1.c2.checked==false && document.f1.c3.checked==false)
+{
+alert("select your qualification");
+return false;
+}
+if(document.f1.r1[0].checked==false && document.f1.r1[1].checked==false)
+{
+alert("selct your proof");
+return false;
+}
+if(document.f1.terms.checked==false)
+{
+alert("terms&condition is not accept");
+return false;
+}
+
+var emailexp=/^[\w\-\.\+\!]+\@[a-zA-Z0-9\.\-]+\.[\w\-\.]{2,3}$/;
+
+if(document.f1.email.value.match(emailexp))
+{
+}
+else
+{
+alert("please check the email");
+return false;
+}
+alert("Form Valid");
+return true;
+}
+</script>
+</head>
+<body>
+<h1 align="center">REGISTRATION FORM</h1>
+<form name="f1">
+<table border="2" bgcolor="yellow" align="center" width=500 height=500>
+<tr>
+<td>NAME</td>
+<td><input type="text" name="i1"></td>
+</tr>
+<tr>
+<td>PASSWORD</td>
+<td><input type="password" name="pass1"></td>
+</tr>
+<tr>
+<td>RE-ENTER PASSWORD</td>
+<td><input type="password"  name="pass2"></td>
+</tr>
+<tr>
+<td>SELECT YOUR AGE</td>
+<td><Select name="age">
+<option>select</option>
+<option>17</option>
+<option>18</option>
+<option>19</option>
+<option>20</option>
+<option>21</option>
+<option>22</option>
+<option>23</option>
+</select>
+</td>
+</tr>
+<tr>
+<td>GENDER</td>
+<td>
+<input type="radio" name="gender">Male
+<input type="radio" name="gender">Female
+</td>
+</tr>
+<tr>
+<td>QUALIFICATION</td>
+<td>
+<input type="checkbox" name="c1">BCA
+<input type="checkbox" name="c2">B.com
+<input type="checkbox" name="c3">MCA
+</td>
+</tr>
+<tr>
+<td>ADDRESS PROOF</td>
+<td>
+<input type="radio" name="r1" >AADHAR CARD
+<input type="radio" name="r1" >PAN CARD
+</td>
+</tr>
+<tr>
+<td>EMAIL ID</td>
+<td><input type="text" name="email"></td>
+</tr>
+<tr>
+<td> TERMS&CONDITION </td>
+<td><input type="checkbox" name="terms">accept</td>
+</tr>
+<tr>
+<td></td>
+<td><input type="button" name="b1" value="submit" onclick="onsubmit_validation()">
+<input type="Reset" value="reset" name="b2">
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
